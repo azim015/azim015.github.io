@@ -19,7 +19,13 @@ main:
     
   - title: "Portfolio"
     url: /portfolio/
-        
+    
+  - title: "Top AI Conferences"
+    #url: /portfolio/
+    
+  - title: "Top AI Journals"
+    #url: /portfolio/
+    
   - title: "Blog Posts"
     url: /year-archive/
     
