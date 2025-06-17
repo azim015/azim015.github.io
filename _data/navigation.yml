@@ -11,17 +11,17 @@ main:
   - title: "Publications"
     url: /publications/
 
+  - title: "Portfolio"
+    url: /portfolio/    
+
   - title: "Events"
     url: /talks/    
 
   - title: "Training"
     url: /teaching/    
     
-  - title: "Portfolio"
-    url: /portfolio/
-    
   - title: "Top AI Conferences"
-    #url: /portfolio/
+    url: /topconf/
     
   - title: "Top AI Journals"
     #url: /portfolio/
