@@ -20,10 +20,10 @@ main:
   - title: "Training"
     url: /teaching/    
     
-  - title: "Top AI Conferences"
+  - title: "Top AI Conferences/Journals"
     url: /topconf/
     
-  - title: "Top AI Journals"
+  #- title: "Top AI Journals"
     #url: /portfolio/
     
   - title: "Blog Posts"
