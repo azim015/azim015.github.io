@@ -25,9 +25,9 @@ author:
   avatar           : "profile1.png"
   name             : "Azim Rezaei"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "I am passionate about developing cutting-edge ML models."
+  location         : "Texas"
+  employer         : "Texas A&M University"
   uri              : # URL
   email            : "arezaei@islander.tamucc.edu" 
 
