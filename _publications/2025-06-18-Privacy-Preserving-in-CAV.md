@@ -1,0 +1,10 @@
+---
+title: "Privacy-Preserving in Connected and Autonomous Vehicles Through Vision to Text Transformation"
+collection: publications
+category: manuscripts
+permalink: /publication/2025-06-18-Privacy-Preserving-in-CAV
+excerpt: 'Connected and Autonomous Vehicles (CAVs) rely on a range of devices that often process privacy-sensitive data. Among these, roadside units play a critical role particularly through the use of AI-equipped (AIE) cameras for applications such as violation detection. However, the privacy risks associated with captured imagery remain a major concern, as such data can be misused for identity theft, profiling, or unauthorized commercial purposes. While traditional techniques such as face blurring and obfuscation have been applied to mitigate privacy risks, individual privacy remains at risk, as individuals can still be tracked using other features such as their clothing. This paper introduces a novel privacy-preserving framework that leverages feedback-based reinforcement learning (RL) and vision-language models (VLMs) to protect sensitive visual information captured by AIE cameras. The main idea is to convert images into semantically equivalent textual descriptions, ensuring that scene-relevant information is retained while visual privacy is preserved. A hierarchical RL strategy is employed to iteratively refine the generated text, enhancing both semantic accuracy and privacy. Evaluation results demonstrate significant improvements in both privacy protection and textual quality, with the Unique Word Count increasing by approximately 77% and Detail Density by around 50% compared to existing approaches.'
+date: 2025-06-18
+venue: 'IEEE Access (Under Review)'
+citation: 'Rezaei, A., & Sookhak, M., & Patooghy, A. Privacy-Preserving in Connected and Autonomous Vehicles Through Vision to Text Transformation.'
+---

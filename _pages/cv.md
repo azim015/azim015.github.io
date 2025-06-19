@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Computer Science, Texas A&M University Corpus Christi, 2022 - present
+** Ph.D in Computer Science, Texas A&M University Corpus Christi, 2022 - present
 * M.S. in Software Engineering, University of Malaya, Kuala Lumpur, Malaysia, 2013
 * B.S. in Computer Engineering
 
@@ -52,13 +52,6 @@ PROFESSIONAL SUMMARY
 	*	Translated business needs into technical specifications for development teams
 	*	Conducted stakeholder meetings and status updates to gather feedback and align goals
 	*	Worked closely with Product Owners and Scrum Masters to ensure alignment on deliverables
-
-
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
   
 Skills
 ======
