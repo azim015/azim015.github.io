@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-** Ph.D in Computer Science, Texas A&M University Corpus Christi, 2022 - present
+* Ph.D in Computer Science, Texas A&M University Corpus Christi, 2022 - present
 * M.S. in Software Engineering, University of Malaya, Kuala Lumpur, Malaysia, 2013
 * B.S. in Computer Engineering
 
