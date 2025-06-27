@@ -1,0 +1,15 @@
+s
+d
+f
+g
+h
+j
+k
+f
+d
+d
+<<<<<<< HEAD:f1.txt
+here
+change herer
+=======
+>>>>>>> parent of db5b5cb (revert):New Text Document.txt
