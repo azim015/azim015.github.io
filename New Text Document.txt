@@ -4,6 +4,7 @@ f
 g
 h
 j
+<<<<<<< HEAD
 k
 f
 d
@@ -13,3 +14,8 @@ here
 change herer
 =======
 >>>>>>> parent of db5b5cb (revert):New Text Document.txt
+=======
+k
+>>>>>>> parent of 3434b3c (cont)
+
+test
