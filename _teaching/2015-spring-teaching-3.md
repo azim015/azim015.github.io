@@ -1,20 +1,11 @@
 ---
-title: "Teaching experience 3"
+title: "Software Engineering"
 collection: teaching
-type: "Workshop"
+type: "Grad Course"
 permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
-location: "City, Country"
+venue: "University of Applied Sciences"
+date: 2022-01-01
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+The course was offered to undergrad and graduate students of computer science department.
 
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
