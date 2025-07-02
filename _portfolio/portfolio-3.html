@@ -1,0 +1,7 @@
+---
+title: "Credit Card Fraud Detection"
+excerpt: "Detecting credit card frauds using XGBoost and LightGBM methods<br/><img src='/images/portfolio3.png'>"
+collection: portfolio
+---
+
+In this project we utilized an ensemble of tree-based models, primarily LightGBM and XGBoost, to detect credit card fraud in a highly imbalanced dataset without employing data resampling techniques. The core of the method is a gradient boosting model that sequentially builds decision trees, where each new tree is designed to correct the errors of the preceding one. In the LightGBM component, a gradient-based one-side sampling technique is used, which involves sorting data by higher gradients and selecting a combination of top records and randomly chosen records to maintain the data distribution while improving efficiency. The XGBoost model calculates a similarity score and gain to control tree splits and prevent overfitting. The final prediction is a weighted average derived from the outputs of over 20 different LightGBM and three XGBoost model executions, a cumulative approach designed to improve the overall accuracy and achieve a higher Area Under the Curve (AUC) score.
