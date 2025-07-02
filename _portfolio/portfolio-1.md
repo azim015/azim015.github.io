@@ -1,7 +1,7 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Image to Text Transformation With Maximum Text Generation Using Feedback-based RL"
+excerpt: "In this project, which is elaborated in the following image, the aim was to generate text from images using a combination of VLM, RL and a feedback-based mechanism.<br/><img src='/images/portfolio1.png'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+The core of the system is a Vision-Language Model (VLM) that performs the initial transformation of an image into a textual description. This process is designed to capture the essential information of a scene without exposing personally identifiable visual details. By doing this, the system avoids the privacy risks associated with traditional methods like blurring, which can be reversed or may not fully conceal sensitive content. To enhance the quality and relevance of the generated text, the framework employs a hierarchical, feedback-driven reinforcement learning (RL) model. This RL agent, using Proximal Policy Optimization (PPO), iteratively refines the initial text by selecting more specific prompts from a predefined list. Furthermore, a Retrieval-Augmented Generation (RAG) module is integrated to provide external feedback, validating the RL agent's prompt selections and correcting potential errors. This creates an iterative loop where the text description is progressively improved for accuracy and detail over several cycles, ensuring the final output is both semantically rich and privacy-preserving. 
