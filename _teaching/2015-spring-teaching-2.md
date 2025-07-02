@@ -7,4 +7,4 @@ venue: "University of Applied Sciences"
 date: 2022-01-01
 ---
 
-Complext algorithms and problem-solving methods were taught and discussed in this course including recursive functions, dynamic programming etc.
+Complex algorithms and problem-solving methods were taught and discussed in this course including recursive functions, dynamic programming etc.
