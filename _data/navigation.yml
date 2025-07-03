@@ -17,8 +17,8 @@ main:
   - title: "Portfolio"
     url: /portfolio/    
 
-  - title: "Events"
-    url: /talks/    
+  #- title: "Events"
+  #  url: /talks/    
 
   - title: "Training"
     url: /teaching/    
