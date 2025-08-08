@@ -23,11 +23,13 @@ main:
   - title: "Training"
     url: /teaching/    
     
-  - title: "Top AI Conferences / Journals"
-    url: /topconf/
+  #- title: "Top AI Conferences / Journals"
+  #  url: /topconf/
 #    url: /page3_complete/
     
-    
+  - title: Top AI Conferences
+    url: /conferences/
+
   #- title: "Top AI Journals"
     #url: /portfolio/
     
