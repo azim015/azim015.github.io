@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conference Countdown</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .conference-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .conference-title a {
+      text-decoration: none;
+      color: #1e2a38;
+    }
+
+    .conference-title a:hover {
+      color: #4e9af1;
+      text-decoration: underline;
+    }
+
+    .date {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .countdown-badge {
+      display: inline-block;
+      background: #4e9af1;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Catch Up With Latest Innovations in AI</h1>
+  <h3>Upcoming AI Research Conferences Countdown</h3>
+  
+  <div class="container" id="conference-list"></div>
+
+  <script>
+    const conferences = [
+      {
+        name: "IEEE TPS 2025",
+        date: "2025-12-10",
+        url: "https://ieee-tps.com"
+      },
+      {
+        name: "IEEE CogMI 2025",
+        date: "2025-07-20",
+        url: "https://ieee-cogmi.org"
+      },
+      {
+        name: "NeurIPS 2025",
+        date: "2025-12-15",
+        url: "https://nips.cc"
+      },
+      {
+        name: "AAAI 2026",
+        date: "2026-02-01",
+        url: "https://aaai.org/aaai-conference"
+      }
+    ];
+
+    const container = document.getElementById("conference-list");
+
+    function getRemainingDays(targetDate) {
+      const now = new Date();
+      const future = new Date(targetDate);
+      const diff = future - now;
+      return diff > 0 ? Math.ceil(diff / (1000 * 60 * 60 * 24)) : 0;
+    }
+
+    function createCard(conf) {
+      const days = getRemainingDays(conf.date);
+      return `
+        <div class="card">
+          <div class="conference-title">
+            <a href="${conf.url}" target="_blank" rel="noopener noreferrer">${conf.name}</a>
+          </div>
+          <div class="date">Start Date: ${new Date(conf.date).toDateString()}</div>
+          <div class="countdown-badge">${days} day(s) remaining</div>
+        </div>
+      `;
+    }
+
+    function renderCards() {
+      container.innerHTML = conferences.map(createCard).join('');
+    }
+
+    renderCards();
+    setInterval(renderCards, 1000 * 60 * 60); // update every hour
+  </script>
+</body>
+</html>
