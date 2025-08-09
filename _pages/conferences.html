@@ -92,10 +92,10 @@ author_profile: false
 
   <script>
     const conferences = [
-	{
+      {
 	  name: "AAAI 2026",
 	  date: "2026-01-20",
-	  due: "2025-08-01"
+	  due: "2025-08-01",
 	  url: "https://aaai.org/conference/aaai/aaai-26/"
 	},
 	{
@@ -201,13 +201,13 @@ author_profile: false
 	  url: "https://recsys.acm.org/"
 	},
 	{
-	  name: "WebConf",
+	  name: "WebConf 2025",
 	  date: "2025-04-28",
 	  due: "2024-10-07",
 	  url: "https://www2025.thewebconf.org/"
 	},
 	{
-	  name: "",
+	  name: "SIGGRAPH 2025",
 	  date: "2025-08-10",
 	  due: "2025-05-05",
 	  url: "https://s2025.siggraph.org/"
@@ -230,7 +230,8 @@ author_profile: false
           <div class="conference-title">
             <a href="${conf.url}" target="_blank" rel="noopener noreferrer">${conf.name}</a>
           </div>
-          <div class="date">Start Date: ${new Date(conf.date).toDateString()}</div>
+          <div class="date">${new Date(conf.date).toDateString()}</div>
+		  <div class="date">Due date: ${new Date(conf.due).toDateString()}</div>
           <div class="countdown-badge">${days} day(s) remaining</div>
         </div>
       `;
