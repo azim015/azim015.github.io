@@ -160,8 +160,8 @@ author_profile: false
 	},
 	{
 	  name: "ECCV 2026",
-	  date: "2026-03-06",
-	  due: "2026-09-08",
+	  date: "2026-09-08",
+	  due: "2026-03-06",
 	  url: "https://eccv.ecva.net/"
 	},
 	{
@@ -224,7 +224,7 @@ author_profile: false
     }
 
     function createCard(conf) {
-      const days = getRemainingDays(conf.date);
+      const days = getRemainingDays(conf.due);
       return `
         <div class="card">
           <div class="conference-title">
