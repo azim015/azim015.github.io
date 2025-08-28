@@ -240,6 +240,11 @@ author_profile: false
     function renderCards() {
       container.innerHTML = conferences.map(createCard).join('');
     }
+	
+	function renderCards() {
+	  const sorted = [...conferences].sort((a, b) => new Date(b.due) - new Date(a.due));
+	  container.innerHTML = sorted.map(createCard).join('');
+	}	
 
     renderCards();
     setInterval(renderCards, 1000 * 60 * 60); // update every hour
