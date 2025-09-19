@@ -38,14 +38,12 @@ PROFESSIONAL SUMMARY
 	*	Wrote technical documentation and reports for model decisions and presented results to stakeholders and executive teams.
 	*	Built and managed data pipelines using SQL and Microsoft SSIS
 
-* Data Analytics, University of Applied Sciences, Tehran, Iran, Feb 2014 – Jun 2016:
+* Business Analyst and Data Analytics, University of Applied Sciences, Tehran, Iran, Feb 2014 – Jun 2016:
 	*	Conducted research in graph-based anomaly detection and pattern recognition in online social networks.
 	*	Designed and taught university-level courses in Artificial Intelligence, Data Structures, Algorithms, and Software Engineering.
 	*	Performed data analysis using Python and R to extract meaningful insights from social network datasets.
 	*	Analyzed large datasets to discover behavioral anomalies and community structures in networks.
 	*	Created visual reports and dashboards to present research findings and academic assessments.
-
-* Business Analyst, Lateral Co, Kuala Lumpur, Malaysia, May 2011 – Dec 2013:
 	*	Conducted stakeholder interviews to elicit business and technical requirements
 	*	Analyzed and documented functional and non-functional requirements
 	*	Created use cases, user stories, and process flow diagrams
