@@ -1,0 +1,10 @@
+---
+title: "GraphTrafficGPT: Enhancing Traffic Management Through Graph-Based AI Agent Coordination"
+collection: publications
+category: manuscripts
+permalink: /publication/2025-10-22-PEFT
+excerpt: 'LLM-based traffic management systems such as TrafficGPT rely on chain-based architectures that process tasks sequentially, reload context at each step, and handle only one query at a time. These constraints, rooted in the linear structure of chain-of-thought prompting, become especially costly for the multi-step, interdependent tasks common in real traffic management centers, where operators routinely monitor congestion patterns, signal timing, and incident response simultaneously. GraphTrafficGPT restructures this process around a directed acyclic graph: tasks become nodes, dependencies become edges, and independent tasks execute in parallel. A centralized Brain Agent (responsible for query decomposition, dependency analysis, and agent coordination) dispatches work to six specialized agents covering data retrieval, traffic analysis, visualization, SUMO-based simulation, workflow optimization, and general queries. Rather than reloading full context at each step, the system propagates only the information each downstream task requires, which appears to account for the majority of the observed efficiency gains. In experiments against the original TrafficGPT on a standardized set of traffic management queries, this architecture reduced token consumption by 50.2%, improved average response latency by 19.0%, and supported simultaneous multi-query execution with efficiency gains of up to 23.0%; however, simple visualization tasks, where graph construction overhead exceeds parallelization benefits, saw latency increases of 36--40%.'
+date: 2026-03-10-GraphTrafficGPT
+venue: 'Elsevier-26'
+citation: 'Ferhat, N., Rezaei, A., & Sookhak,. PEFT-DML: Parameter-Efficient Fine-Tuning Deep Metric Learning for Robust Multi-Modal 3D Object Detection in Autonomous Driving.'
+---
