@@ -171,15 +171,15 @@ html[data-theme="dark"] .aiv .filter-btn[aria-pressed="true"]{color:#222}
 </div>
 
 <script>
-// Deadlines last verified 2026-10-15 against aideadlines.org and the venues' own sites.
-//   confirmed: true  -> date taken from a published call for papers
-//   confirmed: false -> projected from the previous cycle
-//   due: null        -> venue announced conference dates but no deadline yet
+/* Deadlines last verified 2026-10-15 against aideadlines.org and the venues' own sites. */
+/*   confirmed: true  -> date taken from a published call for papers */
+/*   confirmed: false -> projected from the previous cycle */
+/*   due: null        -> venue announced conference dates but no deadline yet */
 var VERIFIED = "2026-11-23";
 
 var VENUES = [
-  // ---------- confirmed ----------
-  // ---------- added 2026-11-23 from the OpenReview venue audit ----------
+  /* ---------- confirmed ---------- */
+  /* ---------- added 2026-11-23 from the OpenReview venue audit ---------- */
   { name: "MIDL 2027", cat: "vision", due: "2026-12-01", conf: null,
     where: "TBA", confirmed: true, url: "https://www.midl.io/" },
   { name: "CPAL 2027", cat: "ml", due: "2026-12-06", conf: null,
@@ -242,7 +242,7 @@ var VENUES = [
   { name: "ECAI 2027", cat: "ml", due: "2027-04-15", conf: "2027-10-02",
     where: "Athens, Greece", confirmed: true, url: "https://www.eurai.org/activities/ECAI_conferences" },
 
-  // ---------- projected from previous cycles ----------
+  /* ---------- projected from previous cycles ---------- */
   { name: "IJCAI 2027", cat: "ml", due: "2027-01-12", conf: "2027-08-07",
     where: "Kyoto, Japan", confirmed: true, url: "https://www.ijcai.org/" },
   { name: "SIGGRAPH 2027", cat: "vision", due: "2027-01-28", conf: "2027-08-08",
@@ -266,7 +266,7 @@ var VENUES = [
   { name: "ECCV 2028", cat: "vision", due: "2028-03-06", conf: null,
     where: "TBA · biennial", confirmed: false, url: "https://eccv.ecva.net/" },
 
-  // ---------- conference announced, deadline not yet set ----------
+  /* ---------- conference announced, deadline not yet set ---------- */
   { name: "ECML-PKDD 2027", cat: "ml", due: null, conf: "2027-09-20",
     where: "Eindhoven, Netherlands", confirmed: true, url: "https://ecmlpkdd.org/" },
   { name: "MICCAI 2027", cat: "vision", due: null, conf: "2027-09-26",
@@ -274,7 +274,7 @@ var VENUES = [
   { name: "ICASSP 2028", cat: "nlp", due: null, conf: "2028-05-28",
     where: "Tokyo, Japan", confirmed: true, url: "https://signalprocessingsociety.org/" },
 
-  // ---------- closed cycles, kept for reference ----------
+  /* ---------- closed cycles, kept for reference ---------- */
   { name: "AISTATS 2027", cat: "ml", due: "2026-10-06", conf: "2027-05-03",
     where: "Montreal, Canada", confirmed: true, url: "https://aistats.org/" },
   { name: "ACCV 2026", cat: "vision", due: "2026-07-05", conf: "2026-12-14",
