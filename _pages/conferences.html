@@ -1,283 +1,403 @@
 ---
 layout: single
-title: "Catch Up With The Latest Innovations in AI"
+title: "Top AI Conferences"
 permalink: /conferences/
 author_profile: false
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>AI Confrences</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #e0eafc, #cfdef3);
-      margin: 0;
-      padding: 2rem;
-      text-align: center;
-    }
+{%- comment -%}
+Venue and journal data mirror https://azimrezaei.github.io/conferences.html
+(source: ../academic-site/conferences.html). Update both together.
+{%- endcomment -%}
+<style>
+.aiv{--ink:#1e2a38;--ink2:#3d4a5c;--ink3:#6b7686;--rule:#d9dee6;--paper:#fff;--paper2:#f2f4f8;
+--acc:#b42318;--accs:#fdecea;--warn:#9a5b00;--warns:#fff4e0;--good:#1d6b3c;--goods:#e6f4ec;--mut:#eef0f3}
+html[data-theme="dark"] .aiv{--ink:#f2f4f8;--ink2:#d5dae3;--ink3:#aab2bf;--rule:#5c6066;--paper:#3a3a3a;--paper2:#525252;
+--acc:#ff9b8f;--accs:#5a2a26;--warn:#ffc46b;--warns:#4d3a1a;--good:#7fd6a0;--goods:#24432f;--mut:#555}
+html[data-theme="dark"] .aiv .filter-btn[aria-pressed="true"]{color:#222}
+.aiv p.lede{color:var(--ink2);font-size:.95em}
+.aiv h2{margin-top:1.6em}
+.aiv .section-p{color:var(--ink3);font-size:.85em}
+.aiv .conf-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.aiv .filter-btn{font-size:.78em;font-weight:500;cursor:pointer;padding:6px 14px;border:1px solid var(--rule);border-radius:999px;background:transparent;color:var(--ink2)}
+.aiv .filter-btn:hover{border-color:var(--acc);color:var(--acc)}
+.aiv .filter-btn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.aiv .deadline-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.aiv .conf-card{border:1px solid var(--rule);border-radius:8px;padding:16px 18px;background:var(--paper);display:flex;flex-direction:column;gap:7px}
+.aiv .conf-card.closed{opacity:.58}
+.aiv .conf-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.aiv .conf-card h3{font-size:1em;margin:0;line-height:1.3}
+.aiv .conf-card h3 a{text-decoration:none}
+.aiv .conf-dates{font-size:.78em;color:var(--ink3);margin:0}
+.aiv .conf-dates b{color:var(--ink2)}
+.aiv .countdown{font-size:.75em;font-weight:600;padding:5px 11px;border-radius:999px;align-self:flex-start;margin-top:2px}
+.aiv .countdown.soon{background:var(--accs);color:var(--acc)}
+.aiv .countdown.near{background:var(--warns);color:var(--warn)}
+.aiv .countdown.open{background:var(--goods);color:var(--good)}
+.aiv .countdown.past{background:var(--mut);color:var(--ink3)}
+.aiv .conf-flag{font-size:.6em;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);border:1px solid var(--rule);border-radius:3px;padding:2px 6px;white-space:nowrap}
+.aiv .aiv-note{font-size:.78em;color:var(--ink3);background:var(--paper2);border-radius:6px;padding:12px 14px;margin-top:22px}
+.aiv .aiv-journals{list-style:none;margin:0;padding:0}
+.aiv .aiv-j{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule);margin:0}
+.aiv .aiv-j h3{font-size:1em;margin:0 0 2px}
+.aiv .aiv-j h3 a{text-decoration:none}
+.aiv .jmetric .if{display:block;font-size:1.5em;font-weight:600;color:var(--ink);line-height:1.1}
+.aiv .jmetric .if.none{color:var(--ink3);font-size:1.2em}
+.aiv .jmetric .lab{display:block;font-size:.6em;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-top:3px}
+.aiv .full{font-size:.8em;color:var(--ink3);margin:0 0 6px}
+.aiv .chip{display:inline-block;font-size:.72em;padding:3px 9px;border-radius:999px;background:var(--paper2);color:var(--ink2);margin-right:6px}
+.aiv .chip b{color:var(--ink)}
+.aiv .chip.badge{background:var(--goods);color:var(--good);font-weight:600}
+@media(max-width:600px){.aiv .aiv-j{grid-template-columns:70px 1fr;gap:12px}}
+</style>
 
-    h1 {
-      margin-bottom: 2rem;
-      color: #333;
-    }
+<div class="aiv">
+<p class="lede">A live countdown to the next submission deadline at the leading venues in artificial intelligence, machine learning, computer vision, natural language processing and robotics, including the ones I publish in and review for.</p>
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
+<h2>Upcoming deadlines</h2>
+<p class="section-p">Sorted by how little time is left. Dates marked <em>estimated</em> are projected from previous cycles because the official call for papers has not been published yet, and <em>TBA</em> means the venue has announced a conference date but no deadline. Always confirm on the venue's own site before you plan around them.</p>
+<div class="conf-filters" id="filters"></div>
+<div class="deadline-grid" id="upcoming"></div>
 
-    .card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
-      width: 280px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+<h2>Recently closed</h2>
+<p class="section-p">Kept for reference. These cycles have passed, and the next edition's call is not out yet.</p>
+<div class="deadline-grid" id="closed"></div>
+<div class="aiv-note" id="verified"></div>
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .conference-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    .conference-title a {
-      text-decoration: none;
-      color: #1e2a38;
-    }
-
-    .conference-title a:hover {
-      color: #4e9af1;
-      text-decoration: underline;
-    }
-
-    .date {
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    .countdown-badge {
-      display: inline-block;
-      background: #4e9af1;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: bold;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-  </style>
-</head>
-<body>
-
-  <h2>Upcoming AI Research Conferences Countdown</h2>
-  
-  <div class="container" id="conference-list"></div>
-
-  <script>
-    const conferences = [
-      {
-	  name: "AAAI 2026",
-	  date: "2026-01-20",
-	  due: "2025-08-01",
-	  url: "https://aaai.org/conference/aaai/aaai-26/"
-	},
-	{
-	  name: "ICLR 2026",
-	  date: "2026-04-23",
-	  due: "2025-09-19",
-	  url: "https://iclr.cc/"
-	},
-	{
-	  name: "ICML 2026",
-	  date: "2026-07-06",
-	  due: "2026-01-23",
-	  url: "https://icml.cc/"
-	},
-	{
-	  name: "NeurIPS 2026",
-	  date: "2026-12-09",
-	  due: "2026-05-04",
-	  url: "https://neurips.cc/"
-	},
-	{
-	  name: "MLSys 2026",
-	  date: "2026-05-17",
-	  due: "2025-10-30",
-	  url: "https://mlsys.org/"
-	},
-	{
-	  name: "ACL 2026",
-	  date: "2026-07-02",
-	  due: "2026-01-05",
-	  url: "https://2025.aclweb.org/"
-	},
-	{
-	  name: "EMNLP 2026",
-	  date: "2026-10-24",
-	  due: "2026-05-25",
-	  url: "https://2026.emnlp.org/"
-	},
-	{
-	  name: "ACL 2026",
-	  date: "2026-07-02",
-	  due: "2026-01-05",
-	  url: "https://2026.aclweb.org/"
-	},
-	{
-	  name: "WSDM 2026",
-	  date: "2025-03-10",
-	  due: "2025-08-07",
-	  url: "https://wsdm-conference.org/2026/"
-	},
-	{
-	  name: "CVPR 2026",
-	  date: "2026-02-22",
-	  due: "2025-11-06",
-	  url: "https://cvpr.thecvf.com/"
-	},
-	{
-	  name: "ICCV 2025",
-	  date: "2025-10-19",
-	  due: "2025-03-03",
-	  url: "https://iccv.thecvf.com/"
-	},
-	{
-	  name: "ECCV 2026",
-	  date: "2026-09-08",
-	  due: "2026-03-06",
-	  url: "https://eccv.ecva.net/"
-	},
-	{
-	  name: "ICRA 2026",
-	  date: "2026-06-01",
-	  due: "2025-09-15",
-	  url: "https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra"
-	},
-	{
-	  name: "ICASSP 2026",
-	  date: "2026-05-04",
-	  due: "2025-09-17",
-	  url: "https://2026.ieeeicassp.org/"
-	},
-	{
-	  name: "SIGIR 2026",
-	  date: "2026-07-20",
-	  due: "2026-01-15",
-	  url: "https://sigir2026.org/en-AU"
-	},
-	{
-	  name: "ACM RecSys 2026",
-	  date: "2026-09-27",
-	  due: "2026-04-14",
-	  url: "https://recsys.acm.org/"
-	},
-	{
-	  name: "SIGGRAPH 2026",
-	  date: "2026-07-19",
-	  due: "2026-04-05",
-	  url: "https://s2026.siggraph.org/"
-	},
-	{
-	  name: "COLT 2026",
-	  date: "2026-06-29",
-	  due: "2026-02-04",
-	  url: "https://learningtheory.org/colt2026/index.html"
-	},
-	{
-	  name: "IJCAI 2026",
-	  date: "2025-08-15",
-	  due: "2026-01-12",
-	  url: "https://2026.ijcai.org/"
-	},
-	{
-	  name: "DSN 2026",
-	  date: "2026-06-22",
-	  due: "2025-11-27",
-	  url: "https://dsn2026.github.io/"
-	},
-	{
-	  name: "UAI 2026",
-	  date: "2026-08-17",
-	  due: "2026-01-25",
-	  url: "https://www.auai.org/uai2026/"
-	},
-	{
-	  name: "CPAL 2026",
-	  date: "2026-03-23",
-	  due: "2025-12-05",
-	  url: "https://cpal.cc/"
-	},
-	{
-	  name: "ASSETS 26",
-	  date: "2026-10-25",
-	  due: "2026-04-22",
-	  url: "https://assets26.sigaccess.org/index.html"
-	},
-	{
-	  name: "ACM KDD",
-	  date: "2026-08-09",
-	  due: "2026-02-08",
-	  url: "https://kdd2026.kdd.org/"
-	},
-	{
-	  name: "IEEE BigData",
-	  date: "2025-12-15",
-	  due: "2025-09-08",
-	  url: "https://conferences.cis.um.edu.mo/ieeebigdata2025/"
-	}
-    ];
-
-    const container = document.getElementById("conference-list");
-
-    function getRemainingDays(targetDate) {
-      const now = new Date();
-      const future = new Date(targetDate);
-      const diff = future - now;
-      return diff > 0 ? Math.ceil(diff / (1000 * 60 * 60 * 24)) : 0;
-    }
-
-    function createCard(conf) {
-      const days = getRemainingDays(conf.due);
-      return `
-        <div class="card">
-          <div class="conference-title">
-            <a href="${conf.url}" target="_blank" rel="noopener noreferrer">${conf.name}</a>
-          </div>
-          <div class="date">${new Date(conf.date).toDateString()}</div>
-		  <div class="date">Due date: ${new Date(conf.due).toDateString()}</div>
-          <div class="countdown-badge">${days} day(s) remaining</div>
+<h2>Journals: rolling submission</h2>
+<p class="section-p">No deadline; submit any time. These are the venues where the longer-form versions of conference work belong, ordered by impact factor.</p>
+<ul class="aiv-journals">
+      <li class="aiv-j">
+        <div class="entry-meta jmetric"><span class="if">20.4</span><span class="lab">Impact factor</span></div>
+        <div>
+          <h3><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34" target="_blank" rel="noopener noreferrer">IEEE TPAMI</a></h3>
+          <p class="full">Transactions on Pattern Analysis and Machine Intelligence</p>
+          <div class="pub-links"><span class="chip metric">Review time not published</span></div>
         </div>
-      `;
-    }
+      </li>
+      <li class="aiv-j">
+        <div class="entry-meta jmetric"><span class="if">10.3</span><span class="lab">Impact factor</span></div>
+        <div>
+          <h3><a href="https://link.springer.com/journal/11263" target="_blank" rel="noopener noreferrer">IJCV</a></h3>
+          <p class="full">International Journal of Computer Vision</p>
+          <div class="pub-links"><span class="chip metric">First decision <b>~96 days</b></span></div>
+        </div>
+      </li>
+      <li class="aiv-j">
+        <div class="entry-meta jmetric"><span class="if">9.7</span><span class="lab">Impact factor</span></div>
+        <div>
+          <h3><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385" target="_blank" rel="noopener noreferrer">IEEE TNNLS</a></h3>
+          <p class="full">Transactions on Neural Networks and Learning Systems</p>
+          <div class="pub-links">
+            <span class="chip badge">I review here</span>
+            <span class="chip metric">Review time not published</span>
+          </div>
+        </div>
+      </li>
+      <li class="aiv-j">
+        <div class="entry-meta jmetric"><span class="if">9.4</span><span class="lab">Impact factor</span></div>
+        <div>
+          <h3><a href="https://www.sciencedirect.com/journal/expert-systems-with-applications" target="_blank" rel="noopener noreferrer">Expert Systems with Applications</a></h3>
+          <p class="full">Elsevier</p>
+          <div class="pub-links"><span class="chip metric">Decision after review <b>~62 days</b></span></div>
+        </div>
+      </li>
+      <li class="aiv-j">
+        <div class="entry-meta jmetric"><span class="if">9.1</span><span class="lab">Impact factor</span></div>
+        <div>
+          <h3><a href="https://ieee-itss.org/pub/t-its/" target="_blank" rel="noopener noreferrer">IEEE T-ITS</a></h3>
+          <p class="full">Transactions on Intelligent Transportation Systems</p>
+          <div class="pub-links"><span class="chip metric">Review time not published</span></div>
+        </div>
+      </li>
+      <li class="aiv-j">
+        <div class="entry-meta jmetric"><span class="if">8.1</span><span class="lab">Impact factor</span></div>
+        <div>
+          <h3><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6687317" target="_blank" rel="noopener noreferrer">IEEE Transactions on Big Data</a></h3>
+          <p class="full">Adaptive Prompt Learning is under revision here</p>
+          <div class="pub-links"><span class="chip metric">Review time not published</span></div>
+        </div>
+      </li>
+      <li class="aiv-j">
+        <div class="entry-meta jmetric"><span class="if">8.0</span><span class="lab">Impact factor</span></div>
+        <div>
+          <h3><a href="https://www.sciencedirect.com/journal/knowledge-based-systems" target="_blank" rel="noopener noreferrer">Knowledge-Based Systems</a></h3>
+          <p class="full">Elsevier</p>
+          <div class="pub-links"><span class="chip metric">Decision after review <b>~56 days</b></span></div>
+        </div>
+      </li>
+      <li class="aiv-j">
+        <div class="entry-meta jmetric"><span class="if">6.7</span><span class="lab">Impact factor</span></div>
+        <div>
+          <h3><a href="https://www.sciencedirect.com/journal/neurocomputing" target="_blank" rel="noopener noreferrer">Neurocomputing</a></h3>
+          <p class="full">Elsevier</p>
+          <div class="pub-links"><span class="chip metric">Decision after review <b>~62 days</b></span></div>
+        </div>
+      </li>
+      <li class="aiv-j">
+        <div class="entry-meta jmetric"><span class="if">4.7</span><span class="lab">Impact factor</span></div>
+        <div>
+          <h3><a href="https://www.sciencedirect.com/journal/artificial-intelligence" target="_blank" rel="noopener noreferrer">Artificial Intelligence (AIJ)</a></h3>
+          <p class="full">Elsevier</p>
+          <div class="pub-links"><span class="chip metric">Decision after review <b>~172 days</b></span></div>
+        </div>
+      </li>
+      <li class="aiv-j">
+        <div class="entry-meta jmetric"><span class="if none">—</span><span class="lab">Not verified</span></div>
+        <div>
+          <h3><a href="https://www.jmlr.org/" target="_blank" rel="noopener noreferrer">JMLR</a></h3>
+          <p class="full">Journal of Machine Learning Research · open access</p>
+          <div class="pub-links"><span class="chip metric">Review time not published</span></div>
+        </div>
+      </li>
+      <li class="aiv-j">
+        <div class="entry-meta jmetric"><span class="if none">—</span><span class="lab">Not in JCR</span></div>
+        <div>
+          <h3><a href="https://jmlr.org/tmlr/" target="_blank" rel="noopener noreferrer">TMLR</a></h3>
+          <p class="full">Transactions on Machine Learning Research · open access, OpenReview</p>
+          <div class="pub-links"><span class="chip metric">Review time not published</span></div>
+        </div>
+      </li>
+    </ul>
+<div class="aiv-note">
+      <strong>Sources.</strong> Impact factors are 2025 JCR values, read from IEEE Xplore
+      (TPAMI, TNNLS, Transactions on Big Data), the IEEE ITS Society (T-ITS), Springer
+      (IJCV) and Elsevier's journal pages. Review times are the publishers' own medians.
+      Elsevier reports <em>decision after review</em>, which excludes desk rejections; its
+      much shorter "first decision" figure is dominated by them. Springer notes that IJCV's
+      37-day median is computed the same way and that a reviewed manuscript typically takes
+      about 96 days. IEEE does not publish median review times for these titles. A dash
+      means no figure I could verify from the publisher.
+    </div>
+</div>
 
-    function renderCards() {
-      container.innerHTML = conferences.map(createCard).join('');
-    }
-	
-	function renderCards() {
-	  const sorted = [...conferences].sort((a, b) => new Date(b.due) - new Date(a.due));
-	  container.innerHTML = sorted.map(createCard).join('');
-	}	
+<script>
+// Deadlines last verified 2026-10-15 against aideadlines.org and the venues' own sites.
+//   confirmed: true  -> date taken from a published call for papers
+//   confirmed: false -> projected from the previous cycle
+//   due: null        -> venue announced conference dates but no deadline yet
+var VERIFIED = "2026-11-23";
 
-    renderCards();
-    setInterval(renderCards, 1000 * 60 * 60); // update every hour
-  </script>
-</body>
-</html>
+var VENUES = [
+  // ---------- confirmed ----------
+  // ---------- added 2026-11-23 from the OpenReview venue audit ----------
+  { name: "MIDL 2027", cat: "vision", due: "2026-12-01", conf: null,
+    where: "TBA", confirmed: true, url: "https://www.midl.io/" },
+  { name: "CPAL 2027", cat: "ml", due: "2026-12-06", conf: null,
+    where: "TBA · proceedings track", confirmed: true, url: "https://cpal.cc/" },
+  { name: "AAMAS 2027", cat: "ml", due: "2026-12-12", conf: null,
+    where: "TBA", confirmed: true, url: "https://www.ifaamas.org/" },
+  { name: "UAI 2027", cat: "ml", due: "2027-02-12", conf: null,
+    where: "TBA", confirmed: false, url: "https://www.auai.org/" },
+  { name: "AutoML 2027", cat: "ml", due: "2027-03-16", conf: "2027-09-01",
+    where: "TBA", confirmed: false, url: "https://automl.cc/" },
+  { name: "RLC 2027", cat: "ml", due: "2027-03-16", conf: null,
+    where: "TBA", confirmed: false, url: "https://rl-conference.cc/" },
+  { name: "COLM 2027", cat: "nlp", due: "2027-03-31", conf: null,
+    where: "TBA", confirmed: false, url: "https://colmweb.org/" },
+  { name: "CoLLAs 2027", cat: "ml", due: "2027-04-15", conf: "2027-09-14",
+    where: "TBA", confirmed: false, url: "https://lifelong-ml.cc/" },
+  { name: "LoG 2027", cat: "ml", due: "2027-08-08", conf: "2027-11-20",
+    where: "TBA", confirmed: false, url: "https://logconference.org/" },
+  { name: "EMNLP 2027", cat: "nlp", due: null, conf: null,
+    where: "TBA · via ARR", confirmed: true, url: "https://aclanthology.org/venues/emnlp/" },
+
+  { name: "FG 2027", cat: "vision", due: "2026-10-17", conf: "2027-04-26",
+    where: "Marrakesh, Morocco", confirmed: true, url: "https://fg2027.ieee-biometrics.org/" },
+  { name: "WWW 2027", cat: "ml", due: "2026-10-26", conf: "2027-05-10",
+    where: "Dublin, Ireland", confirmed: true, url: "https://www2027.thewebconf.org/" },
+  { name: "MLSys 2027", cat: "ml", due: "2026-10-30", conf: "2027-06-21",
+    where: "Bellevue, WA, USA", confirmed: true, url: "https://mlsys.org/" },
+  { name: "FAccT 2027", cat: "ml", due: "2026-11-04", conf: "2027-06-21",
+    where: "Porto, Portugal", confirmed: true, url: "https://facctconference.org/" },
+  { name: "CVPR 2027", cat: "vision", due: "2026-11-16", conf: "2027-06-20",
+    where: "Seattle, WA, USA", confirmed: true,
+    url: "https://cvpr.thecvf.com/Conferences/2027/CallForPapers" },
+  { name: "ICWM 2027", cat: "vision", due: "2026-12-23", conf: "2027-05-01",
+    where: "San Francisco Bay Area, USA · late May", confirmed: false,
+    url: "https://icwm.cc/" },
+  { name: "RSS 2027", cat: "robotics", due: "2026-12-05", conf: "2027-07-06",
+    where: "Athens, Greece · stage 1 abstract", confirmed: true,
+    url: "https://roboticsconference.org/" },
+  { name: "ICAPS 2027", cat: "ml", due: "2026-12-15", conf: "2027-06-27",
+    where: "Columbia, SC, USA", confirmed: true, url: "https://www.icaps-conference.org/" },
+  { name: "NAACL 2027", cat: "nlp", due: "2026-12-24", conf: "2027-06-01",
+    where: "San Francisco, CA, USA · ARR commitment", confirmed: true, url: "https://naacl.org/" },
+  { name: "COLING 2027", cat: "nlp", due: "2026-12-23", conf: "2027-05-09",
+    where: "Macau SAR, China · ARR commitment", confirmed: true,
+    url: "https://2027.coling-iccl.org/" },
+  { name: "ACL 2027", cat: "nlp", due: "2027-01-05", conf: "2027-08-17",
+    where: "Kyoto, Japan · ARR submission", confirmed: true, url: "https://www.aclweb.org/" },
+  { name: "ICWSM 2027", cat: "ml", due: "2027-01-15", conf: null,
+    where: "Edinburgh, Scotland · round 3", confirmed: true,
+    url: "https://www.icwsm.org/2027/" },
+  { name: "SIGIR 2027", cat: "ml", due: "2027-01-22", conf: "2027-07-18",
+    where: "San Jose, CA, USA", confirmed: true, url: "https://sigir.org/" },
+  { name: "ICMR 2027", cat: "vision", due: "2027-02-01", conf: "2027-06-07",
+    where: "Singapore", confirmed: true, url: "https://sigmm.org/" },
+  { name: "InterSpeech 2027", cat: "nlp", due: "2027-02-10", conf: "2027-08-29",
+    where: "São Paulo, Brazil", confirmed: true, url: "https://www.isca-speech.org/" },
+  { name: "IROS 2027", cat: "robotics", due: "2027-03-02", conf: "2027-09-26",
+    where: "Florence, Italy", confirmed: true,
+    url: "https://www.ieee-ras.org/conferences-workshops/financially-co-sponsored/iros" },
+  { name: "ECAI 2027", cat: "ml", due: "2027-04-15", conf: "2027-10-02",
+    where: "Athens, Greece", confirmed: true, url: "https://www.eurai.org/activities/ECAI_conferences" },
+
+  // ---------- projected from previous cycles ----------
+  { name: "IJCAI 2027", cat: "ml", due: "2027-01-12", conf: "2027-08-07",
+    where: "Kyoto, Japan", confirmed: true, url: "https://www.ijcai.org/" },
+  { name: "SIGGRAPH 2027", cat: "vision", due: "2027-01-28", conf: "2027-08-08",
+    where: "Anaheim, CA, USA", confirmed: true, url: "https://www.siggraph.org/" },
+  { name: "ICML 2027", cat: "ml", due: "2027-01-23", conf: "2027-07-04",
+    where: "South America, TBA", confirmed: true, url: "https://icml.cc/" },
+  { name: "COLT 2027", cat: "ml", due: "2027-01-30", conf: "2027-06-28",
+    where: "Tokyo, Japan", confirmed: true, url: "https://learningtheory.org/" },
+  { name: "KDD 2027", cat: "ml", due: "2027-02-09", conf: "2027-08-09",
+    where: "San Jose, CA, USA · cycle 2", confirmed: false, url: "https://kdd.org/" },
+  { name: "ICCV 2027", cat: "vision", due: "2027-03-08", conf: "2027-10-02",
+    where: "Hong Kong, China", confirmed: false, url: "https://iccv.thecvf.com/" },
+  { name: "RecSys 2027", cat: "ml", due: "2027-04-14", conf: "2027-08-23",
+    where: "Honolulu, HI, USA", confirmed: false, url: "https://recsys.acm.org/" },
+  { name: "NeurIPS 2027", cat: "ml", due: "2027-05-15", conf: "2027-12-01",
+    where: "Europe, TBA", confirmed: false, url: "https://neurips.cc/" },
+  { name: "CoRL 2027", cat: "robotics", due: "2027-05-28", conf: null,
+    where: "TBA", confirmed: false, url: "https://www.corl.org/" },
+  { name: "3DV 2028", cat: "vision", due: "2027-08-27", conf: null,
+    where: "TBA", confirmed: false, url: "https://3dvconf.github.io/" },
+  { name: "ECCV 2028", cat: "vision", due: "2028-03-06", conf: null,
+    where: "TBA · biennial", confirmed: false, url: "https://eccv.ecva.net/" },
+
+  // ---------- conference announced, deadline not yet set ----------
+  { name: "ECML-PKDD 2027", cat: "ml", due: null, conf: "2027-09-20",
+    where: "Eindhoven, Netherlands", confirmed: true, url: "https://ecmlpkdd.org/" },
+  { name: "MICCAI 2027", cat: "vision", due: null, conf: "2027-09-26",
+    where: "Auckland, New Zealand", confirmed: true, url: "http://www.miccai.org/" },
+  { name: "ICASSP 2028", cat: "nlp", due: null, conf: "2028-05-28",
+    where: "Tokyo, Japan", confirmed: true, url: "https://signalprocessingsociety.org/" },
+
+  // ---------- closed cycles, kept for reference ----------
+  { name: "AISTATS 2027", cat: "ml", due: "2026-10-06", conf: "2027-05-03",
+    where: "Montreal, Canada", confirmed: true, url: "https://aistats.org/" },
+  { name: "ACCV 2026", cat: "vision", due: "2026-07-05", conf: "2026-12-14",
+    where: "Osaka, Japan · biennial", confirmed: true, url: "https://accv2026.org/" },
+  { name: "KDD 2027 (cycle 1)", cat: "ml", due: "2026-07-26", conf: "2027-08-09",
+    where: "San Jose, CA, USA", confirmed: true, url: "https://kdd.org/" },
+  { name: "AAAI 2027", cat: "ml", due: "2026-07-28", conf: "2027-02-01",
+    where: "Montréal, Canada", confirmed: true, url: "https://aaai.org/conference/aaai/" },
+  { name: "WACV 2027", cat: "vision", due: "2026-08-28", conf: "2027-01-04",
+    where: "Orlando, FL, USA", confirmed: true,
+    url: "https://wacv.thecvf.com/Conferences/2027/Dates" },
+  { name: "3DV 2027", cat: "vision", due: "2026-08-28", conf: "2027-04-06",
+    where: "Thessaloniki, Greece", confirmed: true, url: "https://3dvconf.github.io/2027/" },
+  { name: "ICRA 2027", cat: "robotics", due: "2026-09-15", conf: null,
+    where: "TBA", confirmed: true,
+    url: "https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra" },
+  { name: "ICLR 2027", cat: "ml", due: "2026-09-25", conf: "2027-04-26",
+    where: "TBA", confirmed: true, url: "https://iclr.cc/" }
+];
+
+var FILTERS = [
+  { id: "all",      label: "All venues" },
+  { id: "vision",   label: "Vision & 3D" },
+  { id: "ml",       label: "ML & AI" },
+  { id: "nlp",      label: "NLP & Speech" },
+  { id: "robotics", label: "Robotics" }
+];
+
+var active = "all";
+
+function parseDay(s) {
+  var p = s.split("-");
+  return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2]));
+}
+
+function daysUntil(s) {
+  var now = new Date();
+  var today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+  return Math.round((parseDay(s).getTime() - today) / 86400000);
+}
+
+function fmt(s) {
+  return parseDay(s).toLocaleDateString("en-US",
+    { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
+}
+
+function fmtMonth(s) {
+  return parseDay(s).toLocaleDateString("en-US",
+    { year: "numeric", month: "long", timeZone: "UTC" });
+}
+
+function countdown(days) {
+  if (days === null) return { cls: "past", text: "Deadline TBA" };
+  if (days < 0)      return { cls: "past", text: "Closed" };
+  if (days === 0)    return { cls: "soon", text: "Due today" };
+  if (days === 1)    return { cls: "soon", text: "1 day left" };
+  if (days <= 14)    return { cls: "soon", text: days + " days left" };
+  if (days <= 45)    return { cls: "near", text: days + " days left" };
+  return { cls: "open", text: days + " days left" };
+}
+
+function card(v) {
+  var days = v.due === null ? null : daysUntil(v.due);
+  var c = countdown(days);
+  var flag = v.confirmed ? "" : '<span class="conf-flag">Estimated</span>';
+  return '<article class="conf-card' + (days !== null && days < 0 ? ' closed' : '') + '">' +
+    '<div class="conf-top">' +
+      '<h3><a href="' + v.url + '" target="_blank" rel="noopener noreferrer">' + v.name + '</a></h3>' +
+      flag +
+    '</div>' +
+    '<p class="conf-dates"><b>Deadline</b> ' + (v.due === null ? "not announced" : fmt(v.due)) + '</p>' +
+    '<p class="conf-dates">' + (v.conf === null ? "Dates TBA" : fmtMonth(v.conf)) + ' · ' + v.where + '</p>' +
+    '<span class="countdown ' + c.cls + '">' + c.text + '</span>' +
+    '</article>';
+}
+
+function render() {
+  var pool = VENUES.filter(function (v) { return active === "all" || v.cat === active; });
+
+  var dated = pool.filter(function (v) { return v.due !== null && daysUntil(v.due) >= 0; })
+                  .sort(function (a, b) { return parseDay(a.due) - parseDay(b.due); });
+  var tba   = pool.filter(function (v) { return v.due === null; })
+                  .sort(function (a, b) {
+                    if (a.conf === null) return 1;
+                    if (b.conf === null) return -1;
+                    return parseDay(a.conf) - parseDay(b.conf);
+                  });
+  var closed = pool.filter(function (v) { return v.due !== null && daysUntil(v.due) < 0; })
+                   .sort(function (a, b) { return parseDay(b.due) - parseDay(a.due); });
+
+  var upcoming = dated.concat(tba);
+
+  document.getElementById("upcoming").innerHTML =
+    upcoming.length ? upcoming.map(card).join("")
+                    : '<p class="conf-dates">No open deadlines in this category.</p>';
+  document.getElementById("closed").innerHTML =
+    closed.length ? closed.map(card).join("")
+                  : '<p class="conf-dates">Nothing closed in this category.</p>';
+}
+
+function renderFilters() {
+  document.getElementById("filters").innerHTML = FILTERS.map(function (f) {
+    return '<button class="filter-btn" type="button" data-id="' + f.id + '" aria-pressed="' +
+      (f.id === active) + '">' + f.label + '</button>';
+  }).join("");
+}
+
+document.getElementById("filters").addEventListener("click", function (e) {
+  var btn = e.target.closest("button[data-id]");
+  if (!btn) return;
+  active = btn.getAttribute("data-id");
+  renderFilters();
+  render();
+});
+
+document.getElementById("verified").innerHTML =
+  "<strong>Last verified " + fmt(VERIFIED) + "</strong> against " +
+  '<a href="https://aideadlines.org/" target="_blank" rel="noopener noreferrer">aideadlines.org</a>' +
+  " and the venues' own calls for papers. Dates marked <em>Estimated</em> are projected from " +
+  "the previous cycle; <em>Deadline TBA</em> means the venue has announced conference dates " +
+  "but not a submission deadline. Confirm on the venue's own site before submitting.";
+
+renderFilters();
+render();
+setInterval(render, 60 * 60 * 1000);
+</script>

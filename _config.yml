@@ -159,6 +159,7 @@ include:
   - _pages
   - files
 exclude:
+  - "_pages/conferences - Copy.html"
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
